@@ -1,9 +1,19 @@
 package com.shivam.SpringDemoCdac.xmlAutowire;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Course {
 	private String name;
 	private int duration;
+	
+	@Autowired
 	private Faculty faculty;
+	
+	public Course() {}
+	
+	public Course(Faculty faculty) {
+		this.faculty = faculty;
+	}
 	
 	public String getName() {
 		return name;
