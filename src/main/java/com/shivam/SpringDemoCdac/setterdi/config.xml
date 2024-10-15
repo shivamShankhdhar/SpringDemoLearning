@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+xmlns:p = "http://www.springframework.org/schema/p"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <bean id="proj1" class="com.shivam.SpringDemoCdac.setterdi.Project"
+   p:name="Online Stock Management System"
+   p:technology="Spring Core"
+   />
+   
+   <bean id="proj2" class="com.shivam.SpringDemoCdac.setterdi.Project"
+   p:name="Online Banking System"
+   p:technology="Spring Boot"
+   />
+   
+    <bean id="proj3" class="com.shivam.SpringDemoCdac.setterdi.Project"
+   p:name="Online Contact System"
+   p:technology="Spring MVC"
+   />
+   
+    <!-- First way of declaring bean -->
+   <bean id="student" class="com.shivam.SpringDemoCdac.setterdi.Student">
+   <property name="rollNo">
+   		<value>1</value>
+   </property>
+   
+    <property name="name">
+   		<value>Shivam</value>
+   </property>
+   
+    <property name="marks">
+   		<value>98.9</value>
+   </property>
+   
+    <property name="project">
+   		<ref bean="proj1"></ref>
+   </property>
+   
+   <property name="phone">
+	   <list>
+		   <value>8881113086</value>
+		   <value>7409896234</value>
+		   <value>9720227686</value>
+	   </list>
+   </property>
+   
+   <property name="email">
+   		<set>
+   			<value>s.shankhdhar1981@gmail.com</value>
+   			<value>a.shankhdhar1981@gmail.com</value>
+   		</set>
+   </property>
+   
+   <property name="courses">
+   		<map>
+	   		<entry key="Java programming" value="4"/>
+	   		<entry key="Javascript programming" value="5"/>
+   		</map>
+   </property>
+   </bean>
+   
+   <!-- Second way of declaring bean -->
+   
+   <bean id="student2" class="com.shivam.SpringDemoCdac.setterdi.Student">
+   	<property name="rollNo" value="2"></property>
+    <property name="name" value="Shraddha"></property>
+    <property name="marks" value="100"></property>
+    <property name="project" ref="proj2"></property>
+   </bean>
+   
+  
+   
+    <!-- Third way of declaring bean -->
+    <bean name="student3" class="com.shivam.SpringDemoCdac.setterdi.Student" 
+    p:rollNo="3"
+    p:name="Shivam2"
+    p:marks="90"
+    p:project-ref="proj3"
+    ></bean>
+    </beans>
+    
